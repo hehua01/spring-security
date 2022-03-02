@@ -1,11 +1,11 @@
-package com.example.springsecurity.service;
+package com.example.simple.service;
 
-import com.example.springsecurity.entity.SecurityUser;
-import com.example.springsecurity.repo.UserRepository;
+import com.example.simple.entity.SecurityUser;
+import com.example.simple.entity.User;
+import com.example.simple.repo.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
-import com.example.springsecurity.entity.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

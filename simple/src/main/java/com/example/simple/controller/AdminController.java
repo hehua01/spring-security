@@ -1,4 +1,4 @@
-package com.example.springsecurity.controller;
+package com.example.simple.controller;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.RequestMapping;

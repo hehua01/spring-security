@@ -1,6 +1,6 @@
-package com.example.springsecurity.config;
+package com.example.simple.config;
 
-import com.example.springsecurity.service.CustomerUserDetailService;
+import com.example.simple.service.CustomerUserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
