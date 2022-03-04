@@ -1,5 +1,7 @@
 package com.example.simple.controller;
 
+import com.example.simple.annotation.LogAnnotation;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AppController {
 
     @RequestMapping("/hello")
+    @LogAnnotation(value = "bbbb")
     public String hello(){
         return "hello, app!";
     }

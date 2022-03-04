@@ -4,8 +4,10 @@ import com.example.simple.entity.SecurityUser;
 import com.example.simple.entity.User;
 import com.example.simple.repo.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -34,6 +36,9 @@ public class CustomerUserDetailService implements UserDetailsService {
         List<GrantedAuthority> list = AuthorityUtils.commaSeparatedStringToAuthorityList(sysUser.getRoles());
         SecurityUser securityUser = new SecurityUser(sysUser);
         securityUser.setAuthorityList(list);
+        // 认证信息写入 SecurityContextHolder中
+        SecurityContextHolder.getContext().
+                setAuthentication(new UsernamePasswordAuthenticationToken(securityUser, null, list));
 
         return securityUser;
     }

@@ -1,5 +1,6 @@
 package com.example.simple.controller;
 
+import com.example.simple.annotation.LogAnnotation;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AdminController {
     @RequestMapping("/hello")
     @PreAuthorize("hasAuthority('ADMIN')")
+    @LogAnnotation(value = "aaa")
     public String hello(){
         return "hello, admin!";
     }
