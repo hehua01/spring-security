@@ -10,3 +10,9 @@ spring:
     password: 123456
     hikari:
       maximum-pool-size: 20
+
+
+
+  jackson:
+    serialization:
+      indent_output: true
