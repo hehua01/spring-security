@@ -92,7 +92,7 @@ public class JwtTokenUtil {
         return Jwts.builder()
                 .setClaims(claims)
                 .setExpiration(generateExpirationDate())
-                .signWith(SignatureAlgorithm.HS512, Const.SECRET )
+                .signWith(SignatureAlgorithm.HS512, Const.SECRET)
                 .compact();
     }
 
@@ -115,9 +115,7 @@ public class JwtTokenUtil {
     public Boolean validateToken(String token, UserDetails userDetails) {
         SecurityUser user = (SecurityUser) userDetails;
         final String username = getUsernameFromToken(token);
-        return (
-                username.equals(user.getUsername())
-                        && !isTokenExpired(token)
+        return (username.equals(user.getUsername()) && !isTokenExpired(token)
         );
     }
 }
